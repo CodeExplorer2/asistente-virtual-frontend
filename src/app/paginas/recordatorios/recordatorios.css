@@ -1,0 +1,15 @@
+.contenedor {
+  max-width: 640px;
+  margin: 40px auto;
+  padding: 0 16px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.titulo-pagina {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--texto);
+}

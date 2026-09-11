@@ -1,0 +1,234 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.resumen {
+  margin: 0;
+  color: var(--texto-tenue);
+  font-size: 1rem;
+}
+
+.formulario {
+  display: flex;
+  gap: 8px;
+}
+
+.formulario input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  font-size: 1.1rem;
+  background: var(--superficie);
+}
+
+.formulario input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.boton-icono {
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--borde);
+  background: var(--superficie);
+  cursor: pointer;
+  font-size: 1.4rem;
+  display: grid;
+  place-items: center;
+}
+
+.boton-enviar {
+  background: var(--accent);
+  border: none;
+  color: white;
+}
+
+.boton-enviar:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.cargando {
+  margin: -6px 0 0;
+  color: var(--texto-tenue);
+  font-size: 1rem;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 1rem;
+  margin: -6px 0 0;
+}
+
+.confirmacion {
+  margin: 0 0 -2px;
+  color: var(--personal);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.filtros {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filtro-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--borde);
+  background: var(--superficie);
+  color: var(--texto-tenue);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.filtro-pill .contador {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.filtro-pill.activo {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.vacio {
+  color: var(--texto-tenue);
+  font-size: 1rem;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tarjeta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  padding: 14px;
+  border-left: 4px solid var(--personal);
+  box-shadow: 0 1px 2px rgba(27, 34, 51, 0.04), 0 8px 20px -12px rgba(27, 34, 51, 0.12);
+}
+
+.tarjeta.cat-trabajo {
+  border-left-color: var(--trabajo);
+}
+
+.tarjeta.hecho {
+  opacity: 0.55;
+}
+
+.tarjeta.hecho .titulo {
+  text-decoration: line-through;
+}
+
+.icono-categoria {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  background: var(--personal-wash);
+}
+
+.tarjeta.cat-trabajo .icono-categoria {
+  background: var(--trabajo-wash);
+}
+
+.cuerpo {
+  flex: 1;
+  min-width: 0;
+}
+
+.titulo {
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: var(--texto);
+  font-size: 1.1rem;
+}
+
+.meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.etiqueta {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--personal);
+  background: var(--personal-wash);
+  padding: 2px 7px;
+  border-radius: 5px;
+}
+
+.tarjeta.cat-trabajo .etiqueta {
+  color: var(--trabajo);
+  background: var(--trabajo-wash);
+}
+
+.fecha {
+  font-size: 0.9rem;
+  color: var(--texto-tenue);
+}
+
+.acciones {
+  flex: none;
+  display: flex;
+  gap: 6px;
+}
+
+.check-btn,
+.borrar-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  border: 1px solid var(--borde);
+  background: var(--superficie);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+}
+
+.check-btn.checked {
+  background: var(--personal);
+  border-color: var(--personal);
+  color: white;
+}
+
+.borrar-btn:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+@media (max-width: 480px) {
+  .tarjeta {
+    flex-wrap: wrap;
+  }
+  .acciones {
+    margin-left: 52px;
+  }
+}

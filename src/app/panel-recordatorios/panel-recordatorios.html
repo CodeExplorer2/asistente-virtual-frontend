@@ -1,0 +1,56 @@
+<p class="resumen">Tienes {{ pendientes() }} pendientes</p>
+
+<div class="formulario">
+  @if (confirmacion()) {
+    <p class="confirmacion">{{ confirmacion() }}</p>
+  }
+  <input [(ngModel)]="textoLibre" placeholder="Recuérdame que..." (keyup.enter)="recordar()">
+  <button class="boton-icono" (click)="escuchar()" aria-label="Dictar por voz">🎤</button>
+  <button class="boton-icono boton-enviar" [disabled]="cargando()" (click)="recordar()" aria-label="Añadir recordatorio">➜</button>
+</div>
+
+@if (cargando()) {
+  <p class="cargando">Pensando...</p>
+}
+@if (mensajeError()) {
+  <p class="error">{{ mensajeError() }}</p>
+}
+
+<nav class="filtros">
+  <button class="filtro-pill" [class.activo]="filtro() === 'todos'" (click)="filtro.set('todos')">
+    Todos <span class="contador">{{ listaRecordatorios().length }}</span>
+  </button>
+  <button class="filtro-pill" [class.activo]="filtro() === 'trabajo'" (click)="filtro.set('trabajo')">
+    Trabajo <span class="contador">{{ contarPorCategoria('trabajo') }}</span>
+  </button>
+  <button class="filtro-pill" [class.activo]="filtro() === 'personal'" (click)="filtro.set('personal')">
+    Personal <span class="contador">{{ contarPorCategoria('personal') }}</span>
+  </button>
+</nav>
+
+@if (!recordatoriosFiltrados() || recordatoriosFiltrados().length === 0) {
+  <p class="vacio">No tienes recordatorios en esta categoría.</p>
+} @else {
+  <div class="lista">
+    @for (recordatorio of recordatoriosFiltrados(); track recordatorio.id) {
+      <div
+        class="tarjeta"
+        [class.hecho]="recordatorio.completado"
+        [class.cat-trabajo]="recordatorio.categoria === 'trabajo'"
+      >
+        <div class="icono-categoria">{{ recordatorio.categoria === 'trabajo' ? '💼' : '🏠' }}</div>
+        <div class="cuerpo">
+          <p class="titulo">{{ recordatorio.titulo }}</p>
+          <div class="meta">
+            <span class="etiqueta">{{ recordatorio.categoria }}</span>
+            @if (recordatorio.fecha) { <span class="fecha">{{ recordatorio.fecha }}</span> }
+          </div>
+        </div>
+        <div class="acciones">
+          <button class="check-btn" [class.checked]="recordatorio.completado" (click)="marcarCompletado(recordatorio)" aria-label="Marcar como completado">✓</button>
+          <button class="borrar-btn" (click)="eliminar(recordatorio.id)" aria-label="Borrar">🗑</button>
+        </div>
+      </div>
+    }
+  </div>
+}

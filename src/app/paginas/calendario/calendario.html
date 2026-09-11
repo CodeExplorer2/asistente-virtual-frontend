@@ -1,0 +1,24 @@
+<div class="contenedor">
+  <h1 class="titulo-pagina">Calendario</h1>
+
+  <div class="tarjeta-calendario">
+    <p class="mes">Septiembre 2026</p>
+    <div class="rejilla" translate="no">
+      <span class="dia-semana">L</span><span class="dia-semana">M</span><span class="dia-semana">X</span>
+      <span class="dia-semana">J</span><span class="dia-semana">V</span><span class="dia-semana">S</span><span class="dia-semana">D</span>
+
+      @for (dia of dias; track $index) {
+        <div class="dia" [class.atenuado]="dia.atenuado" [class.hoy]="dia.hoy">
+          {{ dia.numero }}
+          @if (dia.punto) {
+            <span class="punto" [class.trabajo]="dia.punto === 'trabajo'"></span>
+          }
+        </div>
+      }
+    </div>
+    <div class="leyenda">
+      <span><i class="trabajo"></i>Trabajo</span>
+      <span><i class="personal"></i>Personal</span>
+    </div>
+  </div>
+</div>

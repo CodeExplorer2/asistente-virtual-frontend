@@ -1,0 +1,106 @@
+.contenedor {
+  max-width: 640px;
+  margin: 40px auto;
+  padding: 0 16px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.titulo-pagina {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--texto);
+}
+
+.tarjeta-calendario {
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 1px 2px rgba(27, 34, 51, 0.04), 0 8px 20px -12px rgba(27, 34, 51, 0.12);
+  max-width: 420px;
+}
+
+.mes {
+  margin: 0 0 16px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--texto);
+}
+
+.rejilla {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.dia-semana {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--texto-tenue);
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+}
+
+.dia {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: var(--texto);
+}
+
+.dia.atenuado {
+  color: var(--texto-tenue);
+  opacity: 0.5;
+}
+
+.dia.hoy {
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+}
+
+.punto {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--personal);
+}
+
+.punto.trabajo {
+  background: var(--trabajo);
+}
+
+.leyenda {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--texto-tenue);
+}
+
+.leyenda span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.leyenda i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  background: var(--trabajo);
+}
+
+.leyenda i.personal {
+  background: var(--personal);
+}

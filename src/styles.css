@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --accent: #4c46e0;
+  --accent-strong: #3d38b8;
+  --trabajo: #1f6fb2;
+  --trabajo-wash: #e5f0fa;
+  --personal: #2f9e64;
+  --personal-wash: #e5f6ec;
+  --danger: #c14545;
+  --texto: #1b2233;
+  --texto-tenue: #6b7386;
+  --superficie: #ffffff;
+  --borde: #e2e6f0;
+}
+
+body {
+  margin: 0;
+  background-color: #eef1f7;
+  font-family: system-ui, sans-serif;
+}

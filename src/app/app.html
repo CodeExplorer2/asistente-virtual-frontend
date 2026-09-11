@@ -1,0 +1,20 @@
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="marca">
+      <span class="icono-marca">🧠</span>
+      <span>Tu Asistente</span>
+    </div>
+    <nav class="nav-lateral">
+      <a routerLink="/" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">🏠 <span>Inicio</span></a>
+      <a routerLink="/recordatorios" routerLinkActive="activo">🗒️ <span>Recordatorios</span></a>
+      <a routerLink="/calendario" routerLinkActive="activo">📅 <span>Calendario</span></a>
+      <a routerLink="/configuracion" routerLinkActive="activo">⚙️ <span>Configuración</span></a>
+    </nav>
+  </aside>
+
+  <main class="principal">
+    <router-outlet></router-outlet>
+  </main>
+
+</div>

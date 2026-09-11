@@ -1,0 +1,98 @@
+.app {
+  display: flex;
+  min-height: 100vh;
+  align-items: stretch;
+}
+
+.sidebar {
+  flex: none;
+  width: 220px;
+  background: #141a30;
+  padding: 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 6px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.icono-marca {
+  font-size: 1.3rem;
+}
+
+.nav-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-lateral a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: #cfd4f0;
+  font-size: 1.02rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-lateral a:hover {
+  background: #232a4e;
+  color: white;
+}
+
+.nav-lateral a.activo {
+  background: var(--accent);
+  color: white;
+}
+
+.principal {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 780px) {
+  .app {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+  }
+  .nav-lateral {
+    flex-direction: row;
+  }
+  .nav-lateral a span {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .sidebar {
+    padding: 10px 10px;
+    gap: 8px;
+  }
+  .marca span:not(.icono-marca) {
+    display: none;
+  }
+  .nav-lateral {
+    gap: 2px;
+  }
+  .nav-lateral a {
+    padding: 8px;
+  }
+}
