@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'https://tu-dominio-real.com/api'
+  apiUrl: 'https://asistente-virtual-backend-production-5303.up.railway.app/api'
 };
